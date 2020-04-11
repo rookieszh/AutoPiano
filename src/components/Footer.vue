@@ -30,42 +30,6 @@
 }
 </style>
 
-<template>
-  <div class="component-page-footer clearfix">
-    <ul class="footer-ul left-section">
-      <li class="footer-item"><a target="_blank" href="http://www.autopiano.cn"><span style="font-weight: bold;">autopiano.cn</span> &copy; 2019~2020</a></li>
-      &nbsp;|&nbsp;
-      <li class="footer-item"><a target="_blank" href="http://www.beian.miit.gov.cn/">粤ICP备19061906号-1</a></li>
-    </ul>
-    <ul class="footer-ul right-section">
-      <li class="footer-item"><a target="_blank" href="https://i.loli.net/2019/05/15/5cdaf0d79ceef22845.jpg">地铁图小程序</a></li>
-      &nbsp;|&nbsp;
-      <li class="footer-item"><a target="_blank" href="https://www.yuque.com/lnexttickl/sfsqc5/ifz93n" class="info-txt em">用户使用指南</a></li>
-      &nbsp;|&nbsp;
-      <li class="footer-item">
-        <a href="javascript:;" @click="toggleSupportShow()" class="support-txt em">赞赏支持</a>
-        <div class="popup-container" v-show="supportShow">
-          <div class="tab-wrap">
-            <div class="tab" :class="{'active-tab': payType=='WXPAY'}" @click="togglePayType('WXPAY')">
-              <i class="icon icon-wxpay"></i>
-            </div>
-            <div class="tab" :class="{'active-tab': payType=='ALIPAY'}" @click="togglePayType('ALIPAY')">
-              <i class="icon icon-alipay"></i>
-            </div>
-          </div>
-          <div class="qrcode-wrap">
-            <div class="money">¥6.66 鼓励开发者</div>
-            <img class="qrcode wxpay" v-show="payType=='WXPAY'" :src="wxPaySrc"/>
-            <img class="qrcode alipay" v-show="payType=='ALIPAY'"  :src="aliPaySrc"/>
-          </div>
-        </div>
-      </li>
-      &nbsp;|&nbsp;
-      <li class="footer-item"><a href="mailto:zhoujh29@mail2.sysu.edu.cn" class="info-txt">邮件联系</a></li>
-    </ul>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'PageFooter',
